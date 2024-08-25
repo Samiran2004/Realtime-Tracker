@@ -33,7 +33,7 @@ socket.on("receive-location", (users) => {
     users.forEach(user => {
        const { id, latitude, longitude } = user;
        console.log(`User ${id} at ${latitude}, ${longitude}`);
-       map.setView([latitude, longitude], 16)
+    //    map.setView([latitude, longitude], 16)
        if (!markers[id]) {
           markers[id] = L.marker([latitude, longitude]).addTo(map);
        } else {
