@@ -1,5 +1,7 @@
 const socket = io();
 
+let initialLocationSet = false;
+
 //Check the browser support navigation or not...
 if (navigator.geolocation) {
     navigator.geolocation.watchPosition((position) => {
@@ -9,6 +11,10 @@ if (navigator.geolocation) {
             latitude,
             longitude
         });
+        if (!initialLocationSet) {
+            map.setView([latitude, longitude], 16);
+            initialLocationSet = true;
+        }
     }, (error) => {
         console.log(error);
     }, {
