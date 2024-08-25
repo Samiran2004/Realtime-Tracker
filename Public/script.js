@@ -14,7 +14,7 @@ if (navigator.geolocation) {
     }, {
         enableHighAccuracy: true,
         maximumAge: 0,
-        timeout: 5000,
+        timeout: 30000,
     });
 }else{
     console.log("Geolocation not supported by this browser.");
