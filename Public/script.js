@@ -30,7 +30,7 @@ const markers = {};
 
 socket.on("receive-location", (users) => {
     console.log("Locations received from server:", users);
-    map.setView([users.latitude, users.longitude], 16)
+    // map.setView([users.latitude, users.longitude], 16)
     users.forEach(user => {
        const { id, latitude, longitude } = user;
        console.log(`User ${id} at ${latitude}, ${longitude}`);
